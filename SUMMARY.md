@@ -13,7 +13,7 @@
   * [第3章 网络](period1/chapter3/README.md)
     * [3.1 协议基础](period1/chapter3/topic1/README.md)
     * [3.2 Linux内核网络协议栈](period1/chapter3/topic2/README.md)
-    * [3.3 网络分析工具](period2chapter3/topic3/README.md)
+    * [3.3 网络分析工具](period1/chapter3/topic3/README.md)
   * [第4章 数据库](period1/chapter4/README.md)
     * [4.1 基本操作](period1/chapter4/topic1/README.md)
     * [4.2 并发控制](period1/chapter4/topic2/README.md)
