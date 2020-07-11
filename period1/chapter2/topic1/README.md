@@ -150,3 +150,65 @@ function add (a, b) {
     return a + b;
 }
 ```
+
+# 4 面向对象
+
+因为C语言是面向过程的语言，在本节不讨论C语言。
+
+用类来封装现实中的物体。封装类的三要素：成员变量，成员方法，成员变量和方法的属性（私有或者公有）。在成员方法中有一个特殊的函数称为**构造函数**。
+
+构造函数是为了给对象的属性赋初值。
+
+## 4.1 成员变量
+
+成员变量用来描述对象的属性。如何定义成员的属性，不同的语言有不同的表示方法。在Python中使用`_`来表示成员变量的属性。在java中是通过`private`和`public`这种关键字来表示。在Go语言中通过成员变量的首字母的大小写来表示成员变量的属性。
+
+## 4.2 成员方法
+
+成员方法用来描述对象的行为。
+
+## 4.3 示例代码
+
+```python
+class Person:
+    # 构造函数
+    def __init__(self, name, age):
+        # 成员变量
+        self._name = name
+        self._age = age
+    
+    # 成员方法
+    def eat(self):
+        print(self._name, self._age, "吃东西")
+```
+Java中的面向对象
+```java
+package com.xiaolele.demo;
+
+class Person {
+    // 成员变量
+    private String name;
+    private int age;
+
+    // 构造函数
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    // 成员方法
+    public void eat() {
+        System.out.println(this.name + this.age + "吃东西")
+    }
+}
+```
+go语言中的面向对象，其中go语言的面向对象是无侵入的，所谓的无侵入就是如果我们已经将一个类封装好了之后，如果我们想要给这个类添加一个新的方法，如果在java中我们需要使用extend继成一个新的类，或者直接修改已经封装好的类；但是在go中我们直接添加一个函数就可以，为此称为无侵入的。
+```go
+type Person struct {
+    name string
+    age  int 
+}
+
+func (p *Person) eat() {
+    fmt.Println(p.Name, p.Age, "吃东西")
+}
+```
