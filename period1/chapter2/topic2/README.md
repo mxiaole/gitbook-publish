@@ -24,6 +24,7 @@ C语言中头文件查找路径说明：
     2. 如果在1中没有找到就从指定的目录内搜索： `/usr/include`、`/usr/local/include`、`/usr/lib/gcc-lib`
     3. 当在include中使用相对路径的时候，gcc会根据上面的规则来最终构建出头文件的位置。如#include <sys/types.h>就是包含文件/usr/include/sys/types.h
     ```
+
 # 2 Python工具pip
 
 在Python中使用的第三方包管理工具是`pip`，该工具在Python安装的时候一般都是自带的。使用pip工具安装的包通常被安装在python安装目录下的lib\site-packages目录下。
@@ -46,7 +47,7 @@ python -m pip --help
 go语言自带的`go get`命令来进行第三方包的安装。
 
 ```shell
-go get github/mxiaole/package         # 安装包
+go get github/mxiaole/package         # 安装包, 如果没有使用go mod的话，会将包下载到$GOPATH/src下
 go get -u github/mxiaole/package      # 更新指定的包
 ```
 
@@ -57,5 +58,14 @@ npm工具是js中的一个包管理工具。使用方法如下：
 ```shell
 npm install package-name     # 安装包, 此种方式会将安装包下载到当前目录下的node_modules目录下
 npm install -g package-name  # 全局安装，安装包放在 /usr/local 下或node的安装目录
-npm uninstall 模块名          # 下载包
+npm uninstall 模块名          # 卸载包
 ```
+
+# 5 Java工具
+
+## maven
+
+maven是java项目中经常使用的构建工具，以pom文件作为配置。使用maven进行包管理，首先需要将项目中使用到的包在pom文件中进行配置，然后使用命令下载包，下载的包会在home目录下的.m2目录下。
+
+## gradle
+
